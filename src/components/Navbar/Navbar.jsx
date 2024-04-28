@@ -51,11 +51,13 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        <Link to="/search">
+        <Link to="/search" onClick={() => setMenu("search")}
+          className={menu === "search" ? "active" : ""}>
           <img src={assets.search_icon} alt="" />
         </Link>
         <div className="navbar-search-icon">
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => setMenu("cart")}
+          className={menu === "cart" ? "active" : ""}>
             <img src={assets.basket_icon} alt="" />
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
